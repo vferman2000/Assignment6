@@ -1,0 +1,18 @@
+body{background-color:floralwhite; font-family: 'Shojumaru', cursive; color:black;}
+
+.jumbotron { background-color: firebrick; color:black; font-family: 'Shojumaru', cursive;
+}
+
+.header clearfix{color: black;}
+
+.btn-success {background-color: black;
+    
+}
+#pizzaform label {float:left;}
+#paymentform label {float:left;}
+#paymentform {height:800px;s}
+#radioDough{width: 250px; height: 100px; margin:auto;}
+#radioDough label{float:left;}
+#radioDough input{text-align: left;}
+#totalPrice {float: right; background-color: floralwhite;}
+#cardAlert{background-color: floralwhite;}

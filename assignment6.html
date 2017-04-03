@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <title>Assignment 6</title>
+  
+ 
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheet1.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sancreek|Shojumaru" rel="stylesheet"> 
+    <script src="assignment6.js"></script>
+    
+    
+    </head>
+   <body>
+	
+    <div class="container">
+
+      <div class="header clearfix">
+<!--
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+-->
+        <h3 class="text-muted">Kool Pizza Ordering Service 1-800-788-9999</h3>
+      </div>
+
+      <div class="jumbotron">
+  	<div id="totalPrice"></div>
+	<div id = 'pizza_order'>
+        <h1>Enter Delivery Contact:</h1>
+<form id="pizzaform">
+	   <div class="col-md-12">
+          <div class="form-group">
+              <label for="InputName">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Name" >
+          </div>
+	   </div>
+		<div class="col-md-6">
+        <select name="addressType" id="addressType" class="form-control">
+        <option>Please select Address Type</option>
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Dorm">Dorm</option>
+        <option value="Other">Other</option>
+	    </select>
+		</div>
+        <br>
+        <div id="inAddress" class="col-md-6">
+        <input type="text" placeholder="Enter Address Type" id="otherAddress" class="form-control">
+        </div>
+
+        <div class="col-md-12">       
+          <div class="form-group">
+              <label for="InputAdress">Street Address</label>
+                  <input type="text" class="form-control" id="streetAddress" placeholder="Street Adress">
+          </div>
+	    </div>
+		<div class="col-md-8">
+          <div class="form-group">
+              <label for="InputAdress">City</label>
+                  <input type="text" class="form-control" id="city"  placeholder="City" >
+          </div>
+	    </div>
+	
+	   <div class="col-md-4">
+	   <div class="form-group">
+              <label for="InputAdress">Apt.#</label>
+			  <input type="text" class="form-control" id="aptNumber" placeholder="Apt#">
+          </div>
+	   </div>
+	   
+        <div class="col-md-6">  
+          <div class="form-group">
+              <label for="InputAdress">State</label>
+                  <input type="text" class="form-control" id="state" placeholder="State">
+		  </div>
+        </div>
+		<div class="col-md-6"> 
+          <div class="form-group">
+              <label for="InputAdress">Zip Code</label>
+                  <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
+          </div>
+	    </div>
+        <div class="col-md-6"> 
+          <div class="form-group">
+              <label for="PhoneNumber">Phone Number</label>
+                  <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+          </div>
+	    </div>
+	    <div class="col-md-6"> 
+          <div class="form-group">
+                <label for="InputEmail">Email address</label>
+                    <input type="text" class="form-control" id="email" placeholder="Email">
+          </div>
+	    </div>
+		
+		<div>
+        <h1>Customize Your Pizza:</h1>
+		</div>
+		<br>
+		<div id="totalPrice"></div>
+  <p>Step 1: Choose from these 4 delicious dough options:</p>
+ 
+
+  <div id = "radioDough">
+    
+      <label class="radio-inline"><input type="radio" id = "tossed" name="optradio">Hand Tossed</label><br>
+    
+      <label class="radio-inline"><input type="radio" id = "thin" name="optradio">Thin Crust</label><br>
+   
+    
+      <label class="radio-inline"><input type="radio" id = "york" name="optradio">New York Style</label><br>
+ 
+    
+      <label class="radio-inline"><input type="radio" id = "glutenFree" name="optradio">Gluten Free</label>
+    
+	</div>
+	
+
+   <div class="dropdown_dough" >
+	 <p>Step 2: Select the size of your pizza:</p><br>
+    <select id="options" name=select1 class="dropdown_dough"> </select>
+  </div>
+  <br>
+  <br>
+<div>
+	<p>Step 3: Select a yummy Cheese option:</p><br>
+	<select id = "cheese" name=select2>
+		<option value = "Normal" name="optcheese" value="0">Normal (default): no charge</option>
+		<option value= "Light" name="optcheese" value="0">Light cheese: no charge</option>
+		<option value = "Extra" name="optcheese" value="2.99">Extra cheese: +$2.99</option>
+		<option value= "Double" name="optcheese" value="3.99">Double cheese: +$3.99</option>
+	</select>
+</div>    
+<div id="getDough"></div>
+<br>
+<div>
+	<p>Step 4: Select a yummy sauce option:</p><br>
+	<select id = "sauce" name=select3 onchange='OnChange(this.form.select3);'>
+		<option>Regular Tomato: no charge</option>
+		<option>Hearty Tomato: +$.99</option>
+		<option>BBQ Sauce: +$1.99</option>
+	</select>
+</div>    
+	<br>
+	<br>
+	<p>Select your pizza toppings<br>(each topping is only $.99):</p><br>
+	<div id ="checkbox_toppings">
+  	<label class="checkbox-inline"><input type="checkbox" name="chk_group" value=".99"> Pepperoni</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group" value=".99"> Sausage</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> ham</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Bacon</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Salami</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Peppers</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Olives</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Jalapenos</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Mushrooms</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Pineapple</label>
+	<label class="checkbox-inline"><input type="checkbox" name="chk_group"  value=".99"> Onions</label>
+	</div> 
+</form>
+	<br>
+	<br>
+	<br>
+         <input id="submitorder" type="submit" class="btn btn-lg btn-success" href="#" role="button">
+	</div>
+    <br>
+    <br>
+	<div id="billing_order">
+        <h1>Enter Billing Information:</h1>
+		
+		 <form id="paymentform">
+		<div>
+			<label class="checkbox-inline"><input type="checkbox" id="sameAddress">Same as Delivery Address</label>
+		</div>
+	   <div class="col-md-12">
+          <div class="form-group">
+              <label for="InputName">Name</label>
+                  <input type="text" class="form-control" id="billing_name" placeholder="Name" >
+          </div>
+	   </div>
+         <div class="col-md-6">
+		<div class="form-group">
+        <select name="addressType" id="billing_addressType" class="form-control">
+        <option>Please select Address Type</option>
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Dorm">Dorm</option>
+        <option value="Other">Other</option>
+	    </select>
+		</div>
+		</div>
+        <br>
+        <div id= "billing_inAddress" class="col-md-6">
+		<div class="form-group">
+        <input type="text" placeholder="Enter Address Type" id="billing_otherAddress" class="form-control">
+        </div>
+	    </div>
+
+        <div class="col-md-12">       
+          <div class="form-group">
+              <label for="InputAdress">Street Address</label>
+                  <input type="text" class="form-control" id="billing_streetAddress" placeholder="Street Adress">
+          </div>
+	    </div>
+		<div class="col-md-8">
+          <div class="form-group">
+              <label for="InputAdress">City</label>
+                  <input type="text" class="form-control" id="billing_city"  placeholder="City" >
+          </div>
+	    </div>
+	
+	   <div class="col-md-3">
+	   <div class="form-group">
+              <label for="InputAdress">Apt.#</label>
+			  <input type="text" class="form-control" id="billing_aptNumber" placeholder="Apt#">
+          </div>
+	   </div>
+	   
+        <div class="col-md-6">  
+          <div class="form-group">
+              <label for="InputAdress">State</label>
+                  <input type="text" class="form-control" id="billing_state" placeholder="State">
+		  </div>
+        </div>
+		<div class="col-md-6"> 
+          <div class="form-group">
+              <label for="InputAdress">Zip Code</label>
+                  <input type="text" class="form-control" id="billing_zipCode" placeholder="Zip Code">
+          </div>
+	    </div>
+		<br>
+	  
+		  	
+		   <div class="col-md-6"> 
+			   <div class="form-group">
+  			<label for="InputCredit">Credit Card Number</label>
+                  <input type="text" class="form-control" id="creditCard" placeholder="Credit Card Number">
+				   <div id="cardAlert"></div>
+		   </div>
+			   
+		</div>
+			
+			 
+	 
+		   <div class="col-md-12">
+			  <div class="form-group">
+  			<label for="InputCredit">CVC</label>
+                  <input type="text" id="cvc" class="form-control" placeholder="CVC">
+		   </div>
+			</div>
+			
+			
+			<div class="col-md-6">
+			<div class="form-group">
+			<select id = "month" class="form-control">
+			<option name="exp_month" >Expiration Month</option>
+			<option value = "January" name="exp_month" >January</option>
+			<option value= "February" name="exp_month" >February</option>
+			<option value = "March" name="exp_month" >March</option>
+			<option value= "April"	name="exp_month" >April</option>
+			<option value = "May" name="exp_month" >May</option>
+			<option value= "June" name="exp_month" >June</option>
+			<option value = "July" name="exp_month" >July</option>
+			<option value= "August" name="exp_month" >August</option>
+			<option value = "September" name="exp_month" >september</option>
+			<option value= "October" name="exp_month" >October</option>
+			<option value = "November" name="exp_month">November</option>
+			<option value= "December" name="exp_month" >December</option>
+			</select>
+			</div>
+			</div>
+			
+
+			<div class="col-md-6">
+			<div class="form-group">
+			<select id = "year" class = "form-control">
+			<option name="exp_year" >Expiration Year</option>
+			<option value = "2017" name="exp_year" >2017</option>
+			<option value = "2018" name="exp_year" >2018</option>
+			<option value = "2019" name="exp_year" >2019</option>
+			<option value=  "2020" name="exp_year" >2020</option>
+			<option value = "2021" name="exp_year" >2021</option>
+			</select>
+			 </div>
+			 </div>
+		  </form>
+		  <br>
+		  <br>
+         <input id="submitpayment" type="submit" class="btn btn-lg btn-success" href="#" role="button">
+		</div>
+	  <br>
+        <footer class="footer">
+        <p>© 2015 Company, Inc.</p>
+      </footer>
+		</div>
+    </div> <!-- /container -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
